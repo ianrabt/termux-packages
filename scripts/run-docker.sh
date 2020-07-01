@@ -12,8 +12,8 @@ else
 	REPOROOT="$(dirname $(readlink -f $0))/../"
 fi
 
-: ${TERMUX_BUILDER_IMAGE_NAME:=termux/package-builder}
-: ${CONTAINER_NAME:=termux-package-builder}
+: ${TERMUX_BUILDER_IMAGE_NAME:="termux/package-builder:legacy"}
+: ${CONTAINER_NAME:=termux-package-builder-legacy}
 
 # USER=builder
 
