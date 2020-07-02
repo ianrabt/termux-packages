@@ -1,0 +1,15 @@
+--- ../emacs.orig/lisp/loadup.el	2019-12-26 17:20:12.000000000 +0100
++++ ./lisp/loadup.el	2019-12-27 14:18:51.648517987 +0100
+@@ -421,7 +421,11 @@
+       (message "Warning: Change in load-path due to site-init will be \
+ lost after dumping")))
+ 
+-(setq current-load-list nil)
++;; On an emacs that runs undumped, i.e. Android, this causes bogus 
++;; entries to appear in load-history. Commenting this out causes an entry
++;; for loadup.el with a bogus filename to appear instead, but since it
++;; neither provides nor requires anything, it appears to be safe.
++;;(setq current-load-list nil)
+ ;; Avoid storing references to build directory in the binary.
+ (setq custom-current-group-alist nil)
+ 
